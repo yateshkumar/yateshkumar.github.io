@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vinayak Associates</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="myscript.js">   
+        </script>
+        
+
+    </head>
+    <body bgColor="#808080" href="javascript:generatePDF()">
+        <div class="formbold-main-wrapper">
+            <div class="formbold-form-wrapper">
+              <form id="travelForm" method="post" onsubmit="return generatePDF()">
+                <div class="formbold-form-label-2">
+                    <img id="img1" src="./logo.jpg">
+                    <h1 class="vinayakH1">Vinayak Associates</h1>
+                </div>
+                <hr>
+                <!-- <div class="formbold-mb-5">
+                    <label for="guest" class="formbold-form-label">
+                      How many passengers are travelling?
+                    </label>
+                    <input
+                      type="number"
+                      name="guest"
+                      id="guest"
+                      placeholder="5"
+                      class="formbold-form-input"
+                    />
+                </div> -->
+                <br/>
+                <br/>
+                <br/>
+                <div class="formbold-form-label-2">
+                    <span>Passenger Details</span>
+                </div>
+                <div>
+                    <select name="titleName" id="titleName" form="titleNameForm">
+                        <option value="Mr.">Mr</option>
+                        <option value="Mrs.">Mrs</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Dr.">Dr</option>
+                   </select>                       
+                </div>
+                </br>
+                </br>
+                <div class="flex flex-wrap formbold--mx-3">
+                  <div class="w-full sm:w-half formbold-px-3">
+                    <div class="formbold-mb-5">
+                      <label for="fName" class="formbold-form-label"> First Name </label>
+                      <input
+                        type="text"
+                        name="fName"
+                        id="fName"
+                        placeholder="First Name"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full sm:w-half formbold-px-3">
+                    <div class="formbold-mb-5">
+                      <label for="mName" class="formbold-form-label"> Middle Name </label>
+                      <input
+                        type="text"
+                        name="mName"
+                        id="mName"
+                        placeholder="Middle Name"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full sm:w-half formbold-px-3">
+                    <div class="formbold-mb-5">
+                      <label for="lName" class="formbold-form-label"> Last Name </label>
+                      <input
+                        type="text"
+                        name="lName"
+                        id="lName"
+                        placeholder="Last Name"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <div class="formbold-form-label-2">
+                    <span>Flight Details</span>
+                </div>
+                <div class="flex flex-wrap formbold--mx-3">
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="airlineName" class="formbold-form-label">Airline Name</label>
+                        <input
+                          type="text"
+                          name="airlineName"
+                          id="airlineName"
+                          placeholder="Airline Name"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="pnrNumber" class="formbold-form-label">PNR Number</label>
+                        <input
+                          type="text"
+                          name="pnrNumber"
+                          id="pnrNumber"
+                          placeholder="PNR Number"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="seatNumber" class="formbold-form-label">Seat Number</label>
+                        <input
+                          type="text"
+                          name="seatNumber"
+                          id="seatNumber"
+                          placeholder="Seat Number"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    
+              </div>
+              <div class="flex flex-wrap formbold--mx-3">
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="from" class="formbold-form-label">From </label>
+                    <input
+                      type="text"
+                      name="from"
+                      id="from"
+                      placeholder="From"
+                      class="formbold-form-input"
+                    />
+                  </div>
+                </div>
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="to" class="formbold-form-label">To</label>
+                    <input
+                      type="text"
+                      name="to"
+                      id="to"
+                      placeholder="to"
+                      class="formbold-form-input"
+                    />
+                  </div>
+                </div>
+                <div class="w-full sm:w-half formbold-px-3">
+                  <div class="formbold-mb-5">
+                    <label for="flightNumber" class="formbold-form-label">Flight Number</label>
+                    <input
+                      type="text"
+                      name="flightNumber"
+                      id="flightNumber"
+                      placeholder="Flight Number"
+                      class="formbold-form-input"
+                    />
+                  </div>
+                </div>
+              </div>
+                <div class="flex flex-wrap formbold--mx-3">
+                  <div class="w-full sm:w-half formbold-px-3">
+                    <div class="formbold-mb-5 w-full">
+                      <label for="depDate" class="formbold-form-label">Departure date </label>
+                      <input
+                        type="date"
+                        name="depDate"
+                        id="depDate"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                  </div>
+                  <div class="w-full sm:w-half formbold-px-3">
+                    <div class="formbold-mb-5">
+                      <label for="depTime" class="formbold-form-label">Departure Time </label>
+                      <input
+                        type="time"
+                        name="depTime"
+                        id="depTime"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-wrap formbold--mx-3">
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5 w-full">
+                        <label for="arrDate" class="formbold-form-label">Arrival date </label>
+                        <input
+                          type="date"
+                          name="arrDate"
+                          id="arrDate"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="arrTime" class="formbold-form-label">Arrival Time </label>
+                        <input
+                          type="time"
+                          name="arrTime"
+                          id="arrTime"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                        <div class="formbold-mb-5 w-full">
+                          <label for="bookDate" class="formbold-form-label">Date of booking </label>
+                          <input
+                            type="date"
+                            name="bookDate"
+                            id="bookDate"
+                            class="formbold-form-input"
+                          />
+                        </div>
+                    </div>
+                  </div>
+                  
+                <br/>
+                <div class="formbold-form-label-2">
+                    <span>Fare Details</span>
+                </div>
+                <div class="flex flex-wrap formbold--mx-3">
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="flightFare" class="formbold-form-label">Flight Fare</label>
+                        <input
+                          type="number"
+                          min="0"
+                          step=".01"
+                          name="flightFare"
+                          id="flightFare"
+                          placeholder="Flight Fare (excluding charges)"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                    <div class="w-full sm:w-half formbold-px-3">
+                      <div class="formbold-mb-5">
+                        <label for="allCharges" class="formbold-form-label">All charges</label>
+                        <input
+                          type="number"
+                          min="0"
+                          step=".01"
+                          name="allCharges"
+                          id="allCharges"
+                          placeholder="All charges"
+                          class="formbold-form-input"
+                        />
+                      </div>
+                    </div>
+                <div>
+                  <button class="formbold-btn">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+    </body>
+</html>
